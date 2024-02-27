@@ -1,11 +1,18 @@
+import { useNavigate } from "react-router-dom";
+import { useFormat } from "../hooks";
 import "../styles/PosterCard.css";
 import { PosterGenresTag } from "./PosterGenresTag";
 
 export const PosterCard = (movie) => {
-  const getRating = (rating = "R") => rating.split(" - ")[0];
+
+  const {getRating } =  useFormat();
+  const navigate = useNavigate();
+  const onNavigateMovieDetail = () => {
+    navigate(`/detail/${movie.mal_id}`);
+  };
 
   return (
-    <a href="" onClick="" className="search__container__poster__card--a">
+    <a href="" onClick={onNavigateMovieDetail} className="search__container__poster__card--a">
     <div class="search__container__card">
       <div class="search__container__poster">
         <img src={movie.image_url} alt={movie.title} />
