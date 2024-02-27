@@ -1,14 +1,13 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigatioPage } from "..";
 
 export const CharacterAvatar = (character) => {
 
-  const navigate = useNavigate();
-  const onNavigateMovieDetail = () => {
-    navigate(`/character/${character.character.mal_id}`);
-  };
+
+  const {onNavigatePage } =  useNavigatioPage(`/character/${character.character.mal_id}`);
+  
 
   return (
-    <a href="" onClick={onNavigateMovieDetail} className="movieInfo__characters__collection__character--a">
+    <a href="" onClick={onNavigatePage} className="movieInfo__characters__collection__character--a">
     <div className="movieInfo__characters__collection__character animate__animated animate__flip">
         <div className="movieInfo__characters__collection__character--img">
             <img src={character.character.images.jpg.image_url} alt="" />

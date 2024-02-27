@@ -1,18 +1,17 @@
-import { useNavigate } from "react-router-dom";
-import { useFormat } from "../hooks";
+
+import { useFormat, useNavigatioPage } from "../hooks";
 import "../styles/PosterCard.css";
 import { PosterGenresTag } from "./PosterGenresTag";
+import { ProducersItem } from "./ProducersItem";
 
 export const PosterCard = (movie) => {
 
   const {getRating } =  useFormat();
-  const navigate = useNavigate();
-  const onNavigateMovieDetail = () => {
-    navigate(`/detail/${movie.mal_id}`);
-  };
+  const {onNavigatePage } =  useNavigatioPage(`/detail/${movie.mal_id}`);
+ 
 
   return (
-    <a href="" onClick={onNavigateMovieDetail} className="search__container__poster__card--a">
+    <a href="" onClick={onNavigatePage} className="search__container__poster__card--a">
     <div className="search__container__card animate__animated animate__bounceInUp">
       <div className="search__container__poster">
         <img src={movie.image_url} alt={movie.title} />
@@ -38,37 +37,22 @@ export const PosterCard = (movie) => {
           <h3>Productoras</h3>
           <ul>
             {movie.producers.length != 0 ? (
-              <li>
-                <img
-                  src="/productoras/fujipacific.jfif"
-                  alt={movie.producers[0].name}
-                  title={movie.producers[0].name}
-                />
-              </li>
+              <ProducersItem src="/productoras/fujipacific.jfif" name={movie.producers[0].name}></ProducersItem>
+         
             ) : (
               <></>
             )}
 
             {movie.licensors.length != 0 ? (
-              <li>
-                <img
-                  src="/productoras/funimation.jpg"
-                  alt={movie.licensors[0].name}
-                  title={movie.licensors[0].name}
-                />
-              </li>
+              <ProducersItem src="/productoras/funimation.jpg" name={movie.licensors[0].name}></ProducersItem>
+              
             ) : (
               <></>
             )}
 
             {movie.studios.length != 0 ? (
-              <li>
-                <img
-                  src="/productoras/toei.jpg"
-                  alt={movie.studios[0].name}
-                  title={movie.studios[0].name}
-                />
-              </li>
+               <ProducersItem src="/productoras/toei.jpg" name={movie.studios[0].name}></ProducersItem>
+             
             ) : (
               <></>
             )}

@@ -1,26 +1,34 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+
 import { Navigate, useOutletContext, useParams } from "react-router-dom";
-import { loadCharacterDetail } from "../../store";
 import "../styles/Loader.css";
 import "../styles/CharacterPage.css";
+import { useCharacterValidation, useNavigatioPage } from "../hooks";
 
 export const CharacterPage = () => {
   const setnavColor = useOutletContext();
   setnavColor("orange");
 
-  const { characterDetail, isLoading } = useSelector((state) => state.movie);
+  // const { characterDetail, isLoading } = useSelector((state) => state.movie);
+  // if (!characterDetail) {
+  //   return <Navigate to="/main"></Navigate>;
+  // }
+
+  // const { mal_id } = useParams();
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(loadCharacterDetail(mal_id));
+  // }, []);
+
+  // console.log(characterDetail);
+  const { mal_id } = useParams();
+  const {isLoading,characterDetail} = useCharacterValidation(mal_id);
   if (!characterDetail) {
     return <Navigate to="/main"></Navigate>;
   }
+  const lastRouteItem = localStorage.getItem("lastRoute") || "/search";
+  const {onNavigatePage} = useNavigatioPage(lastRouteItem);
 
-  const { mal_id } = useParams();
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(loadCharacterDetail(mal_id));
-  }, []);
 
-  console.log(characterDetail);
 
   return (
     <>
@@ -42,7 +50,7 @@ export const CharacterPage = () => {
               <div className="characterInfo__primary__header">
                 <button
                   className="characterInfo__primary__header--back btn btn-light"
-                  onClick=""
+                  onClick={onNavigatePage}
                 >
                   <i className="bi bi-skip-backward-circle-fill"></i>
                 </button>
@@ -81,6 +89,12 @@ export const CharacterPage = () => {
                   alt={characterDetail.name}
                 />
               </div>
+
+              <img
+                className="characterInfo__primary__logo--onepiece"
+                src="../portada/logo.png"
+                alt=""
+              />
 
               <img
                 className="characterInfo__primary__aqua--type"
@@ -145,7 +159,7 @@ export const CharacterPage = () => {
                       </a>
                     </div>
                     <div className="characterInfo__secondary__tab__form__line">
-                      <h3>Sobre él</h3>
+                      <h3>Sobre él/ella</h3>
                       <p>{characterDetail.about}</p>
                     </div>
                   </div>

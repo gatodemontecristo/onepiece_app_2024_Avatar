@@ -23,7 +23,9 @@ export const getMovieDetail = async (mal_id) => {
       }else{
         detalle['caracteres'] =[];
       }
+     
         return detalle
+        
       })
       .catch((error) => {
         // Manejar cualquier error que ocurra en cualquiera de las solicitudes

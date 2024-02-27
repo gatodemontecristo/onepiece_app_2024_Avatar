@@ -1,4 +1,14 @@
+.movieInfo__image--logo{
+    position: absolute;
+    opacity: 0.15;
+    filter: grayscale(100%);
+    top: 150px;
+    right: 0;
+    width: 30%;
+}
+
 .movieAll{
+    position: relative;
     margin-top: 50px;
     margin-bottom: 80px;
 }

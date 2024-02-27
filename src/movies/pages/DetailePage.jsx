@@ -17,8 +17,10 @@ export const DetailePage = () => {
   }
   const { mal_id } = useParams();
   const dispatch = useDispatch();
+ 
   useEffect(() => {
     dispatch(loadMovieDetail(mal_id));
+    localStorage.setItem("lastRoute","/detail/"+mal_id)
   }, []);
 
   console.log(movieDetail);
@@ -39,6 +41,11 @@ export const DetailePage = () => {
         </div>
       ) : (
         <div className="container movieAll">
+             <img
+        className="movieInfo__image--logo"
+        src="/portada/logo.png"
+        alt=""
+      />
             <div className="movieInfoTitle">
             <h1>
               {movieDetail.title} 
@@ -86,7 +93,7 @@ export const DetailePage = () => {
                   <h1>{movieDetail.title_english}</h1>
                   <button
                     type="button"
-                    className="btn btn-light moviePrimaryButton"
+                    className="btn btn-info"
                   >
                     IMDb {movieDetail.score}
                   </button>
