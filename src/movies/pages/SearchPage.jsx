@@ -1,75 +1,140 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "../styles/SearchPage.css";
 import "../styles/Loader.css";
 import { useDispatch, useSelector } from "react-redux";
-import { loadMoviesCollection } from "../../store";
+import { loadMoviesCollection, sortByDuration, sortByYear } from "../../store";
 import { PosterCard } from "../components";
 import { useOutletContext } from "react-router-dom";
-
 
 export const SearchPage = () => {
   const setnavColor = useOutletContext();
   setnavColor("orange");
+
+  const lastOrder = localStorage.getItem("lastOrder") || "true";
+  const [order, setorder] = useState(JSON.parse(lastOrder) === true);
+
   const { moviesCollection, isLoading } = useSelector((state) => state.movie);
-  
   const dispatch = useDispatch();
- 
   useEffect(() => {
-    dispatch(loadMoviesCollection());
+    dispatch(loadMoviesCollection(order));
   }, []);
 
+  
+  const onChangeOrder = () => {
+    if (order) {
+      dispatch(sortByDuration());
+    } else {
+      dispatch(sortByYear());
+    }
+    setorder(!order);
+    localStorage.setItem("lastOrder", !order);
+  };
 
+
+  const searchItem = localStorage.getItem("searchItem") || "";
+  const [search, setSearch] = useState(searchItem);
+  const onChangeSearch = (event) => {
+    event.preventDefault();
+    localStorage.setItem("searchItem", event.target.value);
+    setSearch(event.target.value);
+  };
 
   return (
     <>
-    <div className="search">
-      <div className="search__container">
-        <div className="search__container__title">
-          <h3 className="search__container__title--text">
-            Ingrese la película de{" "}
-            <span className="search__container__title--important">
-              One Piece
-            </span>{" "}
-            a buscar ...
-          </h3>
-        </div>
+      <div className="search">
+        <div className="search__container">
+          <div className="search__container__title">
+            <h3 className="search__container__title--text">
+              Ingrese la película de{" "}
+              <span className="search__container__title--important">
+                One Piece
+              </span>{" "}
+              a buscar ...
+            </h3>
+          </div>
 
-        <div className="input-group flex-nowrap">
-          <span className="input-group-text" id="addon-wrapping">
-            <i className="bi bi-search"></i>
-          </span>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="wuan pis :)"
-            aria-label="Username"
-            aria-describedby="addon-wrapping"
-            // onChange={onChangeSearch}
-            // value={search}
-            // disabled={isLoading}
-          />
+          <div className="input-group flex-nowrap">
+            <span className="input-group-text" id="addon-wrapping">
+              <i className="bi bi-search"></i>
+            </span>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="wuan pis :)"
+              aria-label="Username"
+              aria-describedby="addon-wrapping"
+              onChange={onChangeSearch}
+              value={search}
+              disabled={isLoading}
+            />
+          </div>
+          <div className="search__container__filter">
+            <div className="search__container__filter__orden">
+              <p>Ordenar por</p>
+              <div
+                className={`btn-group ${isLoading ? " disableClass" : ""}`}
+                role="group"
+                aria-label="Basic checkbox toggle button group"
+              >
+                <input
+                  type="checkbox"
+                  className="btn-check"
+                  name="btnradio"
+                  id="btnradio1"
+                  autoComplete="off"
+                  checked={order}
+                  onChange={onChangeOrder}
+                />
+                <label className="btn btn-outline-warning" htmlFor="btnradio1">
+                  Año
+                </label>
+                <input
+                  type="checkbox"
+                  className="btn-check "
+                  name="btnradio"
+                  id="btnradio2"
+                  autoComplete="off"
+                  checked={!order}
+                  onChange={onChangeOrder}
+                />
+                <label className="btn btn-outline-warning" htmlFor="btnradio2">
+                  Duración
+                </label>
+              </div>
+            </div>
+
+            <p className="search__collection__card--message">
+              Se encontraron ({moviesCollection.filter((movie)=>{
+            if (!!movie.title) {
+            return movie.title.toLowerCase().includes(search.toLowerCase());
+          } else {
+            return false;
+          }
+          
+          }).length}) películas{" "}
+              <i class="bi bi-film"></i>
+            </p>
+          </div>
         </div>
       </div>
 
-
-     
-
-    </div>
-
-    <p className="search__collection__card--message">Se encontraron ({moviesCollection.length}) películas <i class="bi bi-film"></i></p>
-    <div className="search__collection__card">
-  
-    {isLoading ? (
+      <div className="search__collection__card">
+        {isLoading ? (
           <div className="loader__container">
             <span className="loader"></span>
           </div>
-        ):(
-         
-          moviesCollection.map((movie, index) => {
+        ) : (
+          moviesCollection.filter((movie)=>{
+            if (!!movie.title) {
+            return movie.title.toLowerCase().includes(search.toLowerCase());
+          } else {
+            return false;
+          }
+          
+          }).map((movie, index) => {
             return <PosterCard key={index} {...movie}></PosterCard>;
           })
-        )
-}
+        )}
       </div>
     </>
   );

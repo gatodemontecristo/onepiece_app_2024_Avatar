@@ -2,7 +2,7 @@ import "../styles/PosterCard.css";
 import { PosterGenresTag } from "./PosterGenresTag";
 
 export const PosterCard = (movie) => {
-  const getYear = (date = "2024") => date.split("-")[0];
+  // const getYear = (date = "2024") => date.split("-")[0];
   const getRating = (rating = "R") => rating.split(" - ")[0];
 
   return (
@@ -13,7 +13,7 @@ export const PosterCard = (movie) => {
       <div class="search__container__details">
         <h1> {!!movie.title ? movie.title : "One Piece : [SIN TITULO"}</h1>
         <h2>
-          {getYear(movie.date_aired)} • {getRating(movie.rating)} •{" "}
+          {movie.date_aired} • {getRating(movie.rating)} •{" "}
           {movie.duration}
         </h2>
 

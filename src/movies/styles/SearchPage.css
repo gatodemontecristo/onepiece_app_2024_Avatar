@@ -28,9 +28,7 @@
     color: white;
 }   
 .search__collection__card--message{
-    width: 100%;
-    text-align: center;
-    margin-bottom: 20px;
+    text-align: right;
     font-size: 20px;
     font-weight: 300;
     color: rgb(87, 87, 87);
@@ -47,4 +45,27 @@
 
 
 
+.search__container__filter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:center;
+  
+}
+.search__container__filter__orden{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 300;
+    color: rgb(87, 87, 87);
+}
 
+.btn-outline-warning{
+    font-size: 18px;
+    font-weight: 500;
+}
+.btn-check:checked + .btn, :not(.btn-check) + .btn:active, .btn:first-child:active, .btn.active, .btn.show{
+    color: white;
+}
