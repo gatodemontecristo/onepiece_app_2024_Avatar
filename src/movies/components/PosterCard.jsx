@@ -2,10 +2,10 @@ import "../styles/PosterCard.css";
 import { PosterGenresTag } from "./PosterGenresTag";
 
 export const PosterCard = (movie) => {
-  // const getYear = (date = "2024") => date.split("-")[0];
   const getRating = (rating = "R") => rating.split(" - ")[0];
 
   return (
+    <a href="" onClick="" className="search__container__poster__card--a">
     <div class="search__container__card">
       <div class="search__container__poster">
         <img src={movie.image_url} alt={movie.title} />
@@ -69,5 +69,6 @@ export const PosterCard = (movie) => {
         </div>
       </div>
     </div>
+    </a>
   );
 };

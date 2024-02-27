@@ -8,6 +8,7 @@ export const movieSlice = createSlice({
     navBarColour: false,
     messageSaved: "",
     moviesCollection: [],
+    movieDetail: {},
   },
   reducers: {
     loadMovies: (state) => {
@@ -15,6 +16,10 @@ export const movieSlice = createSlice({
     },
     addMoviesCollection: (state, action) => {
       state.moviesCollection = action.payload;
+      state.isLoading = false;
+    },
+    addMovieDetail: (state, action) => {
+      state.movieDetail = action.payload;
       state.isLoading = false;
     },
     sortByYear: (state) => {
@@ -31,6 +36,7 @@ export const movieSlice = createSlice({
 export const {
     loadMovies,
     addMoviesCollection,
+    addMovieDetail,
     sortByYear,
     sortByDuration
 } = movieSlice.actions;
