@@ -9,6 +9,7 @@ export const movieSlice = createSlice({
     messageSaved: "",
     moviesCollection: [],
     movieDetail: {},
+    characterDetail: {},
   },
   reducers: {
     loadMovies: (state) => {
@@ -20,6 +21,10 @@ export const movieSlice = createSlice({
     },
     addMovieDetail: (state, action) => {
       state.movieDetail = action.payload;
+      state.isLoading = false;
+    },
+    addCharacterDetail: (state, action) => {
+      state.characterDetail = action.payload;
       state.isLoading = false;
     },
     sortByYear: (state) => {
@@ -37,6 +42,7 @@ export const {
     loadMovies,
     addMoviesCollection,
     addMovieDetail,
+    addCharacterDetail,
     sortByYear,
     sortByDuration
 } = movieSlice.actions;

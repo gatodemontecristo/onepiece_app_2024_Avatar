@@ -1,6 +1,5 @@
 export const getMovieDetail = async (mal_id) => {
   try {
-    console.log("Mail id" +mal_id);
     const fetch1 = fetch(`https://api.jikan.moe/v4/anime?q=one%20piece&type=Movie`);
     const fetch2 = fetch(`https://api.jikan.moe/v4/anime/${mal_id}/characters`);
 
