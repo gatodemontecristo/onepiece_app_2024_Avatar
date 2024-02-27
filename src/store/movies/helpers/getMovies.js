@@ -15,8 +15,10 @@ export const getMovies = async () => {
             rating: movie.rating,
             duration: movie.duration,
             synopsis: movie.synopsis,
-            genres: movie.genres
-            
+            genres: movie.genres,
+            producers: movie.producers,
+            licensors: movie.licensors,
+            studios: movie.studios
           }));
           console.log(collection);
         return collection;

@@ -5,6 +5,7 @@ export const movieSlice = createSlice({
   name: "movie",
   initialState: {
     isLoading: false,
+    navBarColour: false,
     messageSaved: "",
     moviesCollection: [],
   },

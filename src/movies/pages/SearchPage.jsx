@@ -4,12 +4,14 @@ import "../styles/Loader.css";
 import { useDispatch, useSelector } from "react-redux";
 import { loadMoviesCollection } from "../../store";
 import { PosterCard } from "../components";
+import { useOutletContext } from "react-router-dom";
 
 
 export const SearchPage = () => {
-
+  const setnavColor = useOutletContext();
+  setnavColor("orange");
   const { moviesCollection, isLoading } = useSelector((state) => state.movie);
- 
+  
   const dispatch = useDispatch();
  
   useEffect(() => {
@@ -54,12 +56,15 @@ export const SearchPage = () => {
 
     </div>
 
+    <p className="search__collection__card--message">Se encontraron ({moviesCollection.length}) películas <i class="bi bi-film"></i></p>
     <div className="search__collection__card">
+  
     {isLoading ? (
           <div className="loader__container">
             <span className="loader"></span>
           </div>
         ):(
+         
           moviesCollection.map((movie, index) => {
             return <PosterCard key={index} {...movie}></PosterCard>;
           })

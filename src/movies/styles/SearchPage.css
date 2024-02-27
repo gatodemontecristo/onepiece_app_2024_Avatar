@@ -1,5 +1,6 @@
 .search{
     margin-top: 50px;
+    margin-bottom: 50px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -26,9 +27,16 @@
     background-color: #FD4848;
     color: white;
 }   
-
+.search__collection__card--message{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 300;
+    color: rgb(87, 87, 87);
+}
 .search__collection__card{
-    margin-top: 50px;
+   
     margin-bottom: 100px;
     display: flex;
     flex-direction: row;
