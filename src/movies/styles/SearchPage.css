@@ -1,0 +1,42 @@
+.search{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.search__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+    gap: 20px;
+}
+.search__container__title{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.search__container__title--text{
+    font-size: 40px;
+    font-weight: 700;
+}
+.search__container__title--important{
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #FD4848;
+    color: white;
+}   
+
+.search__collection__card{
+    margin-top: 50px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+
+
