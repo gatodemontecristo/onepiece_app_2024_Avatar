@@ -9,7 +9,7 @@ export const CharacterAvatar = (character) => {
 
   return (
     <a href="" onClick={onNavigateMovieDetail} className="movieInfo__characters__collection__character--a">
-    <div className="movieInfo__characters__collection__character">
+    <div className="movieInfo__characters__collection__character animate__animated animate__flip">
         <div className="movieInfo__characters__collection__character--img">
             <img src={character.character.images.jpg.image_url} alt="" />
             <div className="movieInfo__characters__collection__character--icon" style={{backgroundColor: `${character.role == "Main" ? "#ffc107" : "#FB7D46"}`}}>

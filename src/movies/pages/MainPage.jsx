@@ -8,7 +8,7 @@ export const MainPage = () => {
     <div className="main__container">
       <div className="main__container__blue"></div>
       <div className="main__container__orange"></div>
-      <Atropos className="main__container__atropos"  shadow={false} highlight={false}>
+      <Atropos className="main__container__atropos animate__animated animate__zoomInDown"  shadow={false} highlight={false}>
         <div className="main__container__atropos--img">
       <div className="main__container__titulo">
         <h3 className="main__container__titulo--second">rey de los</h3>

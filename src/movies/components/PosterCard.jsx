@@ -13,7 +13,7 @@ export const PosterCard = (movie) => {
 
   return (
     <a href="" onClick={onNavigateMovieDetail} className="search__container__poster__card--a">
-    <div className="search__container__card">
+    <div className="search__container__card animate__animated animate__bounceInUp">
       <div className="search__container__poster">
         <img src={movie.image_url} alt={movie.title} />
       </div>
