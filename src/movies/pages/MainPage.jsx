@@ -30,52 +30,52 @@ export const MainPage = () => {
       
       <div className="main__container__circle">
         <p>
-          <i class="bi bi-circle-fill"></i>
-          <i class="bi bi-circle-fill"></i>
+          <i className="bi bi-circle-fill"></i>
+          <i className="bi bi-circle-fill"></i>
         </p>
         <p>
-          <i class="bi bi-circle-fill"></i>
-          <i class="bi bi-circle-fill"></i>
+          <i className="bi bi-circle-fill"></i>
+          <i className="bi bi-circle-fill"></i>
         </p>
         <p>
-          <i class="bi bi-circle-fill"></i>
-          <i class="bi bi-circle-fill"></i>
+          <i className="bi bi-circle-fill"></i>
+          <i className="bi bi-circle-fill"></i>
         </p>
         <p>
-          <i class="bi bi-circle-fill"></i>
-          <i class="bi bi-circle-fill"></i>
+          <i className="bi bi-circle-fill"></i>
+          <i className="bi bi-circle-fill"></i>
         </p>
         <p>
-          <i class="bi bi-circle-fill"></i>
-          <i class="bi bi-circle-fill"></i>
+          <i className="bi bi-circle-fill"></i>
+          <i className="bi bi-circle-fill"></i>
         </p>
         <p>
-          <i class="bi bi-circle-fill"></i>
-          <i class="bi bi-circle-fill"></i>
+          <i className="bi bi-circle-fill"></i>
+          <i className="bi bi-circle-fill"></i>
         </p>
         <p>
-          <i class="bi bi-circle-fill"></i>
-          <i class="bi bi-circle-fill"></i>
+          <i className="bi bi-circle-fill"></i>
+          <i className="bi bi-circle-fill"></i>
         </p>
       </div>
       <div className="main__container__circle--blue">
         <p>
-          <i class="bi bi-circle-fill"></i>
-          <i class="bi bi-circle-fill"></i>
-          <i class="bi bi-circle-fill"></i>
-          <i class="bi bi-circle-fill"></i>
-          <i class="bi bi-circle-fill"></i>
-          <i class="bi bi-circle-fill"></i>
-          <i class="bi bi-circle-fill"></i>
+          <i className="bi bi-circle-fill"></i>
+          <i className="bi bi-circle-fill"></i>
+          <i className="bi bi-circle-fill"></i>
+          <i className="bi bi-circle-fill"></i>
+          <i className="bi bi-circle-fill"></i>
+          <i className="bi bi-circle-fill"></i>
+          <i className="bi bi-circle-fill"></i>
         </p>
         <p>
-          <i class="bi bi-circle-fill"></i>
-          <i class="bi bi-circle-fill"></i>
-          <i class="bi bi-circle-fill"></i>
-          <i class="bi bi-circle-fill"></i>
-          <i class="bi bi-circle-fill"></i>
-          <i class="bi bi-circle-fill"></i>
-          <i class="bi bi-circle-fill"></i>
+          <i className="bi bi-circle-fill"></i>
+          <i className="bi bi-circle-fill"></i>
+          <i className="bi bi-circle-fill"></i>
+          <i className="bi bi-circle-fill"></i>
+          <i className="bi bi-circle-fill"></i>
+          <i className="bi bi-circle-fill"></i>
+          <i className="bi bi-circle-fill"></i>
         </p>
       </div>
       <div className="main__container__introduction">

@@ -92,7 +92,7 @@ export const DetailePage = () => {
                   </button>
                 </div>
                 <div className="movieInfoText">
-                  <p>{movieDetail.title_japanese}</p> | <i class="bi bi-graph-up-arrow"></i>  <p>{movieDetail.rank}</p>
+                  <p>{movieDetail.title_japanese}</p> | <i className="bi bi-graph-up-arrow"></i>  <p>{movieDetail.rank}</p>
                 </div>
                 <hr className="movieLine" />
 
@@ -191,7 +191,7 @@ export const DetailePage = () => {
                             <div className="movieInfo__characters__collection__character--img">
                                 <img src="/pruebajpg.jpg" alt="" />
                                 <div className="movieInfo__characters__collection__character--icon">
-                                 <p><i class="bi bi-bookmark-star-fill"></i></p>
+                                 <p><i className="bi bi-bookmark-star-fill"></i></p>
                                 </div>
                             </div>
                             <p className="movieInfo__characters__collection__character--name">Hiluluk</p>

@@ -1,0 +1,202 @@
+.characterContent{
+    margin: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+.characterInfo{
+    width: 40%;
+    overflow: hidden;
+    border-radius: 40px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+}
+.characterInfo__primary{
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px 0px 20px;
+    position: relative;
+   
+    
+}
+
+.characterInfo__primary__aqua--type{
+    position: absolute;
+    width: 300px;
+    opacity: 0.1;
+    top: -50px;
+    left:  -40px;
+    z-index: 0;
+}
+
+.characterInfo__primary__header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 15;
+}
+.characterInfo__primary__nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.characterInfo__primary__nav__info{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.characterInfo__primary__nav__info--name{
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 700;
+}
+.characterInfo__primary__nav__number{
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.characterInfo__primary__nav__info__types{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.characterInfo__primary--img{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    z-index: 25;
+    position: relative;
+}
+.characterInfo__primary--img--hiden{
+    width: 350px;
+    height: 350px;
+    visibility: hidden;
+}
+.characterInfo__primary--img--real{
+    border-radius: 50%;
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    bottom: -30px;
+    z-index: 25;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+
+
+.characterInfo__secondary{
+    background-color: #f6f6f6;
+    border-radius: 40px;
+    padding: 50px 20px;
+    position: relative;
+    z-index: 0;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+}
+.characterInfo__secondary__tab{
+    padding: 20px;
+}
+.characterInfo__secondary__tab__form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.characterInfo__secondary__tab__form__line{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+.characterInfo__secondary__tab__form__line h3{
+    color: #3c3c3c;
+    font-size: 13px;
+    font-weight: 500;
+    width: 20%;
+}
+.characterInfo__secondary__tab__form__line p{
+    color: #000000;
+    font-size: 13px;
+    font-weight: 500;
+    width: 80%;
+
+}
+.characterInfo__secondary__tab__form__line a{
+    color: #000000;
+    font-size: 13px;
+    font-weight: 500;
+    width: 80%;
+
+}
+.characterInfo__secondary__tab__form__progress_defText{
+    color: #000000;
+    font-size: 13px;
+    font-weight: 500;
+    width: 80%;
+    margin-top: 20px;
+}
+.characterInfo__secondary__tab__form__progress{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.characterInfo__secondary__tab__form__progress h3{
+    color: #3c3c3c;
+    font-size: 13px;
+    font-weight: 500;
+    width: 20%;
+}
+.characterInfo__secondary__tab__form__progress p{
+    color: #000000;
+    font-size: 13px;
+    font-weight: 500;
+    width: 20%;
+}
+.characterInfo__secondary__tab__form__progress .progress{
+    
+    width: 60%;
+
+}
+.characterInfo__secondary__tab__form_subtitle{
+    color: #000000;
+    font-size: 20px;
+    font-weight: 800;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.characterInfo__tab__form__line{
+    display: flex;
+    flex-direction: row;  
+    align-items: center;
+   
+}
+.characterInfo__secondary__tab--tag--list{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;  
+    justify-content: center;
+   align-items: center;
+   gap: 10px;
+   margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.characterInfo__primary--img--real:hover{
+   
+    -webkit-animation: shakeY 1s;
+    animation: shakeY 1s;
+}

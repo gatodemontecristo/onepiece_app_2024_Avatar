@@ -1,7 +1,7 @@
 export const getCharacter = async (mal_id) => {
 
 
-    const url = `https://api.jikan.moe/v4/characters/25914/full`;
+    const url = `https://api.jikan.moe/v4/characters/${mal_id}/full`;
 
     try {
         const response = await fetch(url);
@@ -11,7 +11,9 @@ export const getCharacter = async (mal_id) => {
             name: data.name,
             name_kanji: data.name_kanji,
             about: data.about,
-            mal_id: data.mal_id
+            mal_id: data.mal_id,
+            extra_info: data.url,
+            role: data.anime[0].role
         }
         return obj;
     } catch (error) {

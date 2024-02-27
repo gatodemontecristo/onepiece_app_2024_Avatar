@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import 'bootstrap/dist/js/bootstrap.js'
 import './sass/customBoostrap.scss'
 import 'bootstrap-icons/font/bootstrap-icons.min.css'
 import 'animate.css/animate.min.css'

@@ -86,7 +86,7 @@ export const SearchPage = () => {
           }
           
           }).length}) películas{" "}
-              <i class="bi bi-film"></i>
+              <i className="bi bi-film"></i>
             </p>
           </div>
         </div>
