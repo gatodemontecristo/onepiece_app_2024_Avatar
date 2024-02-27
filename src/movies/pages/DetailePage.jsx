@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import "../styles/Loader.css";
 import "../styles/DetailePage.css";
 import { useFormat } from "../hooks";
+import { CharacterAvatar } from "../components";
 
 export const DetailePage = () => {
   const setnavColor = useOutletContext();
@@ -172,7 +173,35 @@ export const DetailePage = () => {
             </div>
           </div>
           <hr className="movieLine" />
+            
+            <div className="movieInfo__characters">
+            <h1 className="movieInfo__characters__title">Personajes</h1>
+            <div className="movieInfo__characters__collection">
+              {
 
+!!movieDetail.caracteres ? (movieDetail.caracteres.map((character, index) => {
+  return <CharacterAvatar key={index} {...character}></CharacterAvatar>;
+})) : (<></>)
+
+
+                
+              }
+              {/* <a href="" className="movieInfo__characters__collection__character--a">
+                        <div className="movieInfo__characters__collection__character">
+                            <div className="movieInfo__characters__collection__character--img">
+                                <img src="/pruebajpg.jpg" alt="" />
+                                <div className="movieInfo__characters__collection__character--icon">
+                                 <p><i class="bi bi-bookmark-star-fill"></i></p>
+                                </div>
+                            </div>
+                            <p className="movieInfo__characters__collection__character--name">Hiluluk</p>
+                        </div>
+                        </a> */}
+            </div>
+            </div>
+
+
+          <hr className="movieLine" />
           <div className="movieBack">
             <button
               type="button"
