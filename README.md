@@ -11,7 +11,7 @@
     <br />
     <a href="https://www.avatar-global.com/"><strong>Enlace de la empresa»</strong></a>
     <br />
-     <a href=""><strong>Proyecto desplegado 🙌»</strong></a>
+     <a href="https://onepiecemovies.netlify.app/"><strong>Proyecto desplegado 🙌»</strong></a>
     <br />
   </p>
 </div>
