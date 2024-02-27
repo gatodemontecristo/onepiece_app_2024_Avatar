@@ -1,8 +1,8 @@
-
 import { Navigate, useOutletContext, useParams } from "react-router-dom";
 import "../styles/Loader.css";
 import "../styles/CharacterPage.css";
 import { useCharacterValidation, useNavigatioPage } from "../hooks";
+import { SeiyuAvatar } from "../components";
 
 export const CharacterPage = () => {
   const setnavColor = useOutletContext();
@@ -21,13 +21,12 @@ export const CharacterPage = () => {
 
   // console.log(characterDetail);
   const { mal_id } = useParams();
-  const {isLoading,characterDetail} = useCharacterValidation(mal_id);
+  const { isLoading, characterDetail } = useCharacterValidation(mal_id);
   if (!characterDetail) {
     return <Navigate to="/main"></Navigate>;
   }
   const lastRouteItem = localStorage.getItem("lastRoute") || "/search";
-  const {onNavigatePage} = useNavigatioPage(lastRouteItem);
-
+  const { onNavigatePage } = useNavigatioPage(lastRouteItem);
 
 
   return (
@@ -154,7 +153,8 @@ export const CharacterPage = () => {
                       <h3>Mas información</h3>
                       <a href={characterDetail.extra_info} target="_blank">
                         <p>
-                          Enlace aquí <i className="bi bi-box-arrow-up-right"></i>
+                          Enlace aquí{" "}
+                          <i className="bi bi-box-arrow-up-right"></i>
                         </p>
                       </a>
                     </div>
@@ -177,7 +177,21 @@ export const CharacterPage = () => {
                     role="tabpanel"
                     aria-labelledby="home-tab"
                     tabIndex="0"
-                  ></div>
+                  >
+                    <div  className="characterInfo__seiyu__collection">
+                    {!!characterDetail.voices ? (
+                      characterDetail.voices.map((voice, index) => {
+                        return (
+                          
+                          <SeiyuAvatar key={index} {...voice}></SeiyuAvatar>
+                       
+                        );
+                      })
+                    ) : (
+                      <></>
+                    )}
+                       </div>
+                  </div>
                 </div>
               </div>
             </div>

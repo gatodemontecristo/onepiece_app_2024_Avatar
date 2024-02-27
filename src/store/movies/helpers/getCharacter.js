@@ -13,7 +13,8 @@ export const getCharacter = async (mal_id) => {
             about: data.about,
             mal_id: data.mal_id,
             extra_info: data.url,
-            role: data.anime[0].role
+            role: data.anime[0].role,
+            voices: data.voices
         }
         return obj;
     } catch (error) {

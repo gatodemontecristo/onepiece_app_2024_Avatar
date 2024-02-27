@@ -208,3 +208,11 @@
     -webkit-animation: shakeY 1s;
     animation: shakeY 1s;
 }
+
+.characterInfo__seiyu__collection{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    flex-wrap: wrap;    
+    justify-content: center;
+}

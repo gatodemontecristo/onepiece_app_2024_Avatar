@@ -11,8 +11,6 @@ export const getMovieDetail = async (mal_id) => {
       .then((data) => {
         // Hacer algo con los datos de ambas respuestas
 
-        console.log("Datos de la primera solicitud:", data[0].data);
-        console.log("Datos de la segunda solicitud:", data[1]);
       //   console.log({
       //     detallePelicula:data[0].data.filter((movie)=>movie.mal_id==mal_id),
       //     personajesPelicula:data[1]
@@ -32,7 +30,6 @@ export const getMovieDetail = async (mal_id) => {
         console.error("Error:", error);
         return [];
       });
-      console.log(results);
       return results;
   } catch (error) {
     console.error(error);

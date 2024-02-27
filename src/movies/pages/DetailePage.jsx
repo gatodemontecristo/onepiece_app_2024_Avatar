@@ -1,6 +1,11 @@
 import { useEffect } from "react";
 import { loadMovieDetail } from "../../store";
-import { Navigate, useNavigate, useOutletContext, useParams } from "react-router-dom";
+import {
+  Navigate,
+  useNavigate,
+  useOutletContext,
+  useParams,
+} from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import "../styles/Loader.css";
 import "../styles/DetailePage.css";
@@ -17,14 +22,12 @@ export const DetailePage = () => {
   }
   const { mal_id } = useParams();
   const dispatch = useDispatch();
- 
+
   useEffect(() => {
     dispatch(loadMovieDetail(mal_id));
-    localStorage.setItem("lastRoute","/detail/"+mal_id)
+    localStorage.setItem("lastRoute", "/detail/" + mal_id);
   }, []);
 
-  console.log(movieDetail);
- 
 
   const navigate = useNavigate();
 
@@ -32,7 +35,7 @@ export const DetailePage = () => {
     navigate("/search");
   };
 
-  const {getYear,startMovie,objectLines } =  useFormat();
+  const { getYear, startMovie, objectLines } = useFormat();
   return (
     <>
       {isLoading ? (
@@ -41,25 +44,31 @@ export const DetailePage = () => {
         </div>
       ) : (
         <div className="container movieAll">
-             <img
-        className="movieInfo__image--logo"
-        src="/portada/logo.png"
-        alt=""
-      />
-            <div className="movieInfoTitle">
+          <img
+            className="movieInfo__image--logo"
+            src="/portada/logo.png"
+            alt=""
+          />
+          <div className="movieInfoTitle">
             <h1>
-              {movieDetail.title} 
-              ({!!movieDetail.aired ? getYear(movieDetail.aired.from) : ""})
+              {movieDetail.title}(
+              {!!movieDetail.aired ? getYear(movieDetail.aired.from) : ""})
             </h1>
             <div className="movieButtonCollection  animate__animated animate__fadeIn">
               <button type="button" className="btn btn-secondary">
                 IMDb {movieDetail.score}
               </button>
-              <button type="button" className="btn btn-warning moviePrimaryButton">
+              <button
+                type="button"
+                className="btn btn-warning moviePrimaryButton"
+              >
                 {" "}
                 <i className="bi bi-heart-fill redHeart"></i> Mirar luego
               </button>
-              <button type="button" className="btn btn-warning moviePrimaryButton">
+              <button
+                type="button"
+                className="btn btn-warning moviePrimaryButton"
+              >
                 {" "}
                 <i className="bi bi-people-fill"></i> Invitar amigos
               </button>
@@ -70,8 +79,15 @@ export const DetailePage = () => {
 
             <div className="movieCard">
               <div className="movieImageInfo animate__animated animate__fadeInLeft">
-                <img src={!!movieDetail.images ? getYear(movieDetail.images.jpg.large_image_url) : ""} alt="" />
-                
+                <img
+                  src={
+                    !!movieDetail.images
+                      ? getYear(movieDetail.images.jpg.large_image_url)
+                      : ""
+                  }
+                  alt=""
+                />
+
                 <button type="button" className="btn btn-danger">
                   <i className="bi bi-suit-heart-fill"></i> Mirar luego
                 </button>
@@ -81,25 +97,21 @@ export const DetailePage = () => {
                 <button type="button" className="btn btn-warning">
                   <i className="bi bi-three-dots"></i> Traducir
                 </button>
-                <button
-                  type="button"
-                  className="btn btn-secondary"
-                >
+                <button type="button" className="btn btn-secondary">
                   <i className="bi bi-chat-fill"></i> Mostrar comentarios
                 </button>
               </div>
               <div className="movieDetailInfo">
                 <div className="movieInfoSubTitle">
                   <h1>{movieDetail.title_english}</h1>
-                  <button
-                    type="button"
-                    className="btn btn-info"
-                  >
+                  <button type="button" className="btn btn-info">
                     IMDb {movieDetail.score}
                   </button>
                 </div>
                 <div className="movieInfoText">
-                  <p>{movieDetail.title_japanese}</p> | <i className="bi bi-graph-up-arrow"></i>  <p>{movieDetail.rank}</p>
+                  <p>{movieDetail.title_japanese}</p> |{" "}
+                  <i className="bi bi-graph-up-arrow"></i>{" "}
+                  <p>{movieDetail.rank}</p>
                 </div>
                 <hr className="movieLine" />
 
@@ -163,11 +175,15 @@ export const DetailePage = () => {
                     <span>{objectLines(movieDetail.licensors)}</span>
                   </p>
                   <p>
-                    Salida al aire : <span>{!!movieDetail.aired ? getYear(movieDetail.aired.string) : ""}</span>
+                    Salida al aire :{" "}
+                    <span>
+                      {!!movieDetail.aired
+                        ? getYear(movieDetail.aired.string)
+                        : ""}
+                    </span>
                   </p>
                   <p>
-                    Estudios :{" "}
-                    <span>{objectLines(movieDetail.studios)}</span>
+                    Estudios : <span>{objectLines(movieDetail.studios)}</span>
                   </p>
                 </div>
                 <hr className="movieLine" />
@@ -180,19 +196,22 @@ export const DetailePage = () => {
             </div>
           </div>
           <hr className="movieLine" />
-            
-            <div className="movieInfo__characters">
+
+          <div className="movieInfo__characters">
             <h1 className="movieInfo__characters__title">Personajes</h1>
             <div className="movieInfo__characters__collection">
-              {
-
-!!movieDetail.caracteres ? (movieDetail.caracteres.map((character, index) => {
-  return <CharacterAvatar key={index} {...character}></CharacterAvatar>;
-})) : (<></>)
-
-
-                
-              }
+              {!!movieDetail.caracteres ? (
+                movieDetail.caracteres.map((character, index) => {
+                  return (
+                    <CharacterAvatar
+                      key={index}
+                      {...character}
+                    ></CharacterAvatar>
+                  );
+                })
+              ) : (
+                <></>
+              )}
               {/* <a href="" className="movieInfo__characters__collection__character--a">
                         <div className="movieInfo__characters__collection__character">
                             <div className="movieInfo__characters__collection__character--img">
@@ -205,8 +224,7 @@ export const DetailePage = () => {
                         </div>
                         </a> */}
             </div>
-            </div>
-
+          </div>
 
           <hr className="movieLine" />
           <div className="movieBack">
