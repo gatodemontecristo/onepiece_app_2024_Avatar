@@ -1,0 +1,28 @@
+@import "../../sass/responsiveStyles";
+.navbar__container {
+  display: flex;
+  flex-direction: row;
+  @include tablet {
+    gap: 30px;
+    padding: 20px 20px;
+    justify-content: center;
+  }
+  @include desktop {
+    gap: 70px;
+    padding: 20px 100px;
+    justify-content: flex-start;
+  }
+}
+.navbar__container__link {
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 600;
+  color: white;
+  z-index: 50;
+  @include tablet {
+    font-size: 18px;
+  }
+  @include desktop {
+    font-size: 22px;
+  }
+}

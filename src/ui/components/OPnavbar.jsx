@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import "../styles/OPnavbar.css";
+import "../styles/OPnavbar.scss";
 
 export const OPnavbar = ({navColor}) => {
   return (

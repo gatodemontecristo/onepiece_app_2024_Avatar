@@ -1,22 +1,21 @@
 @import "bootstrap/scss/bootstrap";
-
+@import "responsiveStyles";
 h1,
 h2,
 h3,
 h4,
-p ,
-a{
+p,
+a {
   padding: 0px;
   margin: 0px;
   font-family: "Ubuntu", sans-serif;
 }
 
-
 //TODO: Estas clases modifican el input-search de bootstrap de la página de búsqueda
 
 .input-group-text {
-   font-size: 25px;
-   font-family: "Ubuntu", sans-serif;
+  
+  font-family: "Ubuntu", sans-serif;
   background-color: #fff;
   border-radius: 50px;
   -webkit-border-radius: 50px;
@@ -25,9 +24,14 @@ a{
   -o-border-radius: 50px;
   border: 2px solid rgb(120, 120, 120);
   border-right: 0px;
+  @include tablet {
+    font-size: 20px;
+  }
+  @include desktop {
+    font-size: 25px;
+  }
 }
 .form-control {
-  font-size: 25px;
   font-family: "Ubuntu", sans-serif;
   border-radius: 50px;
   -webkit-border-radius: 50px;
@@ -36,19 +40,24 @@ a{
   -o-border-radius: 50px;
   border: 2px solid rgb(120, 120, 120);
   border-left: 0px;
+  @include tablet {
+    font-size: 20px;
+  }
+  @include desktop {
+    font-size: 25px;
+  }
 }
 
-
-.btn-secondary{
+.btn-secondary {
   background-color: #535b61;
   border: 1px solid #535b61;
 }
-.btn-info{
-  background-color: #86B8D2;
-  border: 1px solid #86B8D2;
+.btn-info {
+  background-color: #86b8d2;
+  border: 1px solid #86b8d2;
 }
 
-.btn-light{
+.btn-light {
   color: white;
   background-color: #ffffff00;
   border: none;

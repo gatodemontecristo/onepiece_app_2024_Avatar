@@ -1,5 +1,5 @@
 import { useOutletContext } from "react-router-dom";
-import "../styles/MainPage.css";
+import "../styles/MainPage.scss";
 import Atropos from 'atropos/react';
 export const MainPage = () => {
   const setnavColor = useOutletContext();

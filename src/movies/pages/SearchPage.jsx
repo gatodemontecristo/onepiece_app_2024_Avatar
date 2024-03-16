@@ -1,5 +1,5 @@
 
-import "../styles/SearchPage.css";
+import "../styles/SearchPage.scss";
 import "../styles/Loader.css";
 
 import { PosterCard } from "../components";
