@@ -1,6 +1,6 @@
 import { Navigate, useOutletContext, useParams } from "react-router-dom";
 import "../styles/Loader.css";
-import "../styles/CharacterPage.css";
+import "../styles/CharacterPage.scss";
 import { useCharacterValidation, useNavigatioPage } from "../hooks";
 import { SeiyuAvatar } from "../components";
 
