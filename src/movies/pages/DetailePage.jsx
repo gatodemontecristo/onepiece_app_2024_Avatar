@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import "../styles/Loader.css";
-import "../styles/DetailePage.css";
+import "../styles/DetailePage.scss";
 import { useFormat } from "../hooks";
 import { CharacterAvatar } from "../components";
 
@@ -56,21 +56,21 @@ export const DetailePage = () => {
             </h1>
             <div className="movieButtonCollection  animate__animated animate__fadeIn">
               <button type="button" className="btn btn-secondary">
-                IMDb {movieDetail.score}
+                IMDb <span className="movieDetailTextButton">{movieDetail.score}</span>
               </button>
               <button
                 type="button"
                 className="btn btn-warning moviePrimaryButton"
               >
                 {" "}
-                <i className="bi bi-heart-fill redHeart"></i> Mirar luego
+                <i className="bi bi-heart-fill redHeart"></i> <span className="movieDetailTextButton">Mirar luego</span>
               </button>
               <button
                 type="button"
                 className="btn btn-warning moviePrimaryButton"
               >
                 {" "}
-                <i className="bi bi-people-fill"></i> Invitar amigos
+                <i className="bi bi-people-fill"></i> <span className="movieDetailTextButton">Invitar amigos</span>
               </button>
             </div>
           </div>

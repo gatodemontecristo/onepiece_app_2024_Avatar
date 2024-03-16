@@ -1,0 +1,327 @@
+@import "../../sass/responsiveStyles";
+.movieInfo__image--logo {
+  position: absolute;
+  opacity: 0.15;
+  filter: grayscale(100%);
+  top: 150px;
+  right: 0;
+  width: 30%;
+  @include tablet {
+    display: none;
+  }
+  @include desktop {
+    display: block;
+  }
+}
+
+.movieAll {
+  position: relative;
+  
+  margin-bottom: 80px;
+  @include tablet {
+    margin-top: 30px;
+  }
+  @include desktop {
+    margin-top: 50px;
+  }
+}
+.movieInfoTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.movieInfoTitle h1 {
+  color: #fd4848;
+  @include tablet {
+    font-size: 25px;
+  }
+  @include desktop {
+    font-size: 35px;
+  }
+}
+.movieDetailTextButton {
+  @include tablet {
+    display: none;
+  }
+  @include desktop {
+    display: block;
+  }
+}
+
+.movieLine {
+  border-color: #03050f;
+  width: 100%;
+}
+
+.movieInfoSubTitle {
+  display: flex;
+  flex-direction: row;
+}
+.movieCard {
+  display: flex;
+  flex-direction: row;
+  color: #03050f;
+  @include tablet {
+    flex-direction: column;
+  }
+  @include desktop {
+    flex-direction: row;
+  }
+}
+.movieButtonCollection {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.movieCard .movieImageInfo {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+  @include tablet {
+    margin-right: 0px;
+  }
+  @include desktop {
+    margin-right: 40px;
+  }
+}
+.movieCard .movieImageInfo .movieEspecialButton {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.redHeart {
+  color: rgba(255, 0, 0, 0.645);
+}
+.movieCard .movieDetailInfo {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  @include tablet {
+    margin-top: 50px;
+  }
+  @include desktop {
+    margin-top: 0px;
+  }
+}
+.movieCard .movieDetailInfo .movieInfoSubTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.movieCard .movieDetailInfo .movieInfoSubTitle button {
+  padding: 2px;
+}
+.movieCard .movieDetailInfo .movieInfoSubTitle h1 {
+  margin: 0;
+  margin-right: 10px;
+  @include tablet {
+    font-size: 25px;
+  }
+  @include desktop {
+    font-size: 30px;
+  }
+}
+
+.movieCard .movieDetailInfo .movieInfoText {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  margin-top: 10px;
+  color: rgb(84, 84, 84);
+}
+.movieCard .movieDetailInfo .movieInfoCharacteristics h1 {
+  margin: 0;
+  margin-bottom: 10px;
+  color: #03050f;
+  text-align: start;
+  @include tablet {
+    font-size: 25px;
+  }
+  @include desktop {
+    font-size: 30px;
+  }
+}
+.movieCard .movieDetailInfo .movieInfoCharacteristics {
+  color: rgb(84, 84, 84);
+}
+
+.movieDetailInfo .movieSecondaryDetails {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.movieDetailInfo .movieSecondaryDetails .movieStars {
+  display: flex;
+  flex-direction: row;
+  gap: 1px;
+}
+.movieDetailInfo .movieSecondaryDetails .movieSecondaryDetailsExtra {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.movieCard .movieDetailInfo .movieAditionalDetails h1 {
+  margin: 0;
+  margin-bottom: 10px;
+  color: #03050f;
+  text-align: start;
+  @include tablet {
+    font-size: 25px;
+  }
+  @include desktop {
+    font-size: 30px;
+  }
+}
+.movieCard .movieDetailInfo .movieAditionalDetails p {
+  margin: 0;
+}
+.movieCard .movieDetailInfo .movieAditionalDetails {
+  margin-bottom: 20px;
+}
+
+.movieCard .movieDetailInfo .movieAditionalDetails span {
+  margin-left: 20px;
+  color: rgb(84, 84, 84);
+}
+
+.movieBack {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.movieBack h2 {
+  color: #03050f;
+  font-size: 20px;
+  margin: 0;
+}
+.movieBack .mySearchLogOut {
+  background-color: #141414 !important;
+}
+
+.movieInfo__characters{
+margin-left: auto;
+margin-right: auto;
+
+@include tablet {
+    width: 90%;
+    margin-top: 30px;
+  }
+  @include desktop {
+    width: 100%;
+    margin-top: 0px;
+  }
+}
+.movieInfo__characters__title {
+  margin: 0;
+  margin-bottom: 40px;
+  color: #03050f;
+  text-align: start;
+  @include tablet {
+    font-size: 25px;
+  }
+  @include desktop {
+    font-size: 30px;
+  }
+}
+.movieInfo__characters__collection {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  @include tablet {
+    gap: 15px;
+  }
+  @include desktop {
+    gap: 25px;
+  }
+}
+.movieInfo__characters__collection__character {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.movieInfo__characters__collection__character--img {
+  position: relative;
+}
+.movieInfo__characters__collection__character--icon {
+  /* background-color: #ffc107; */
+  position: absolute;
+
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  @include tablet {
+    width: 30px;
+    height: 30px;
+    top: -10px;
+  }
+  @include desktop {
+    width: 50px;
+    height: 50px;
+    top: -15px;
+  }
+}
+.movieInfo__characters__collection__character--icon p {
+  font-weight: 500;
+  color: white;
+
+  @include tablet {
+    font-size: 15px;
+  }
+  @include desktop {
+    font-size: 25px;
+  }
+}
+.movieInfo__characters__collection__character--img img {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  @include tablet {
+    width: 90px;
+    height: 90px;
+  }
+  @include desktop {
+    width: 150px;
+    height: 150px;
+  }
+}
+.movieInfo__characters__collection__character--name {
+  color: #03050f;
+  /* color: blue; */
+  margin-top: 10px;
+  font-weight: 500;
+  text-align: center;
+  @include tablet {
+    width: 80px;
+  }
+  @include desktop {
+    width: 100%;
+  }
+}
+.movieInfo__characters__collection__character--img:hover {
+  -webkit-animation: shakeY 1s;
+  animation: shakeY 1s;
+}
+.movieInfo__characters__collection__character--a {
+  text-decoration: none;
+}

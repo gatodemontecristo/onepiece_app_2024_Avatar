@@ -9,6 +9,7 @@ import { Provider } from 'react-redux'
 import { store } from './store'
 import { Onepiece } from './Onepiece'
 
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
   <>
