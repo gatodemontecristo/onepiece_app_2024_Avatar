@@ -5,7 +5,7 @@
   justify-content: center;
   @include tablet {
     margin-top: 30px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
   }
   @include desktop {
     margin-top: 50px;
@@ -49,9 +49,15 @@
 }
 .search__collection__card--message {
   text-align: right;
-  font-size: 20px;
+ 
   font-weight: 300;
   color: rgb(87, 87, 87);
+  @include tablet {
+    font-size: 16px;
+  }
+  @include desktop {
+    font-size: 20px;
+  }
 }
 .search__collection__card {
   margin-bottom: 100px;
@@ -59,7 +65,13 @@
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
+ 
+  @include tablet {
+    gap: 15px;
+  }
+  @include desktop {
+    gap: 20px;
+  }
 }
 
 .search__container__filter {
@@ -81,14 +93,25 @@
   flex-direction: row;
   align-items: center;
   gap: 10px;
-  font-size: 20px;
   font-weight: 300;
   color: rgb(87, 87, 87);
+  @include tablet {
+    font-size: 16px;
+  }
+  @include desktop {
+    font-size: 20px;
+  }
 }
 
 .btn-outline-warning {
-  font-size: 18px;
+  
   font-weight: 500;
+  @include tablet {
+    font-size: 16px;
+  }
+  @include desktop {
+    font-size: 18px;
+  }
 }
 .btn-check:checked + .btn,
 :not(.btn-check) + .btn:active,

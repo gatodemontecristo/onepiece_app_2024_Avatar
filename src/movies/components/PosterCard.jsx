@@ -1,6 +1,6 @@
 
 import { useFormat, useNavigatioPage } from "../hooks";
-import "../styles/PosterCard.css";
+import "../styles/PosterCard.scss";
 import { PosterGenresTag } from "./PosterGenresTag";
 import { ProducersItem } from "./ProducersItem";
 
